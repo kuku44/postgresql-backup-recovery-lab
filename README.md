@@ -26,8 +26,16 @@ Configured a primary PostgreSQL server and a standby server.
 ### 4. Replication Verification
 Verified that changes made on the primary database appeared on the standby server.
 
-### 5. Point-in-Time Recovery
-Status: To be completed and verified.
+### 5. Point-in-Time Recovery (PITR)
+Status: Completed and verified.
+
+- Created a separate PITR test database.
+- Configured WAL restoration.
+- Created a named restore point: `pitr_before_change`.
+- Recovered the database to the named restore point.
+- Verified that the record inserted after the restore point was excluded.
+
+Evidence: `pitr-verification.png`
 
 ## Evidence
 Screenshots and practical results will be added to the screenshots folder.
